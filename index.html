@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Fidélité - Le Bistrot Paris</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset de base */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #2d3436;
+            padding: 20px;
+        }
+
+        /* La carte principale */
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Liseré de couleur en haut de la carte */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #ff7675, #d63031);
+        }
+
+        /* En-tête */
+        .logo { font-size: 36px; margin-bottom: 5px; }
+        .restaurant-name {
+            font-size: 13px; text-transform: uppercase; letter-spacing: 2px;
+            color: #b2bec3; font-weight: 600; margin-bottom: 20px;
+        }
+        h1 { font-size: 22px; font-weight: 700; color: #2d3436; margin-bottom: 8px; line-height: 1.3; }
+        .subtitle { font-size: 14px; color: #636e72; margin-bottom: 30px; }
+        .highlight { color: #d63031; font-weight: 700; }
+
+        /* Champs du formulaire */
+        .input-group { margin-bottom: 18px; text-align: left; }
+        .input-group label {
+            display: block; font-size: 13px; font-weight: 600; color: #2d3436;
+            margin-bottom: 8px; margin-left: 4px;
+        }
+        .input-group input {
+            width: 100%; padding: 14px 16px; border: 2px solid #f1f2f6;
+            border-radius: 12px; font-family: inherit; font-size: 14px;
+            transition: all 0.3s ease; background-color: #fcfcfc;
+        }
+        .input-group input:focus {
+            outline: none; border-color: #ff7675; background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(255, 118, 117, 0.1);
+        }
+        .optional-badge { font-size: 11px; color: #b2bec3; font-weight: normal; }
+
+        /* Bouton d'action */
+        button {
+            width: 100%; background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+            color: white; border: none; padding: 16px; border-radius: 12px;
+            font-family: inherit; font-size: 16px; font-weight: 600; cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease; margin-top: 10px;
+        }
+        button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(214, 48, 49, 0.2); }
+        button:active { transform: translateY(0); }
+
+        /* Mentions légales */
+        .rgpd { font-size: 11px; color: #b2bec3; margin-top: 25px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="logo">🍽️</div>
+        <div class="restaurant-name">Le Bistrot Paris</div>
+        
+        <h1>Rejoignez le Club !</h1>
+        <p class="subtitle">Cumulez <span class="highlight">5 points</span> = 1 Dessert Offert 🍰</p>
+
+        <form id="loyaltyForm" action="https://formspree.io/f/mwvrlvko" method="POST">
+            
+            <div class="input-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Ex: Thomas" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Adresse Email</label>
+                <input type="email" id="email" name="email" placeholder="thomas@email.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="anniversaire">Date de naissance <span class="optional-badge">(Optionnel)</span></label>
+                <input type="date" id="anniversaire" name="anniversaire">
+            </div>
+
+            <button type="submit">Gagner mon 1er point 🎉</button>
+        </form>
+
+        <div class="rgpd">
+            En cliquant, vous acceptez de recevoir vos points et surprises par email. 100% sécurisé, 0% spam.
+        </div>
+    </div>
+
+</body>
+</html>
